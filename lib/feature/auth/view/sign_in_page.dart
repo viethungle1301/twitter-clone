@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:gap/gap.dart';
 import 'package:twitter_clone_app/feature/auth/view/forget_password.dart';
-import 'package:twitter_clone_app/feature/home/view/home_screen_page.dart';
+import 'package:twitter_clone_app/feature/home/view/main_screens.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -78,7 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const HomeScreenPage()));
+                        builder: (context) => const MainScreens()));
               },
               child: Container(
                 padding:
