@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+
 import 'package:gap/gap.dart';
 import 'package:twitter_clone_app/feature/auth/view/forget_password.dart';
 import 'package:twitter_clone_app/feature/home/view/home_screen_page.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
   @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(250, 250, 250, 255),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -35,6 +45,7 @@ class SignInPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: 'Enter email',
                 hintStyle: const TextStyle(fontSize: 20),
@@ -43,11 +54,13 @@ class SignInPage extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 215, 194, 194),
+                fillColor: const Color.fromARGB(238, 238, 238, 255),
               ),
             ),
             const Gap(30),
             TextField(
+              controller: passwordController,
+              obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Enter password',
                 hintStyle: const TextStyle(fontSize: 20),
@@ -56,7 +69,7 @@ class SignInPage extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 215, 194, 194),
+                fillColor: const Color.fromARGB(238, 238, 238, 255),
               ),
             ),
             const Gap(50),
@@ -99,27 +112,45 @@ class SignInPage extends StatelessWidget {
             ),
             const Gap(70),
             Center(
-              child: ElevatedButton.icon(
-                onPressed: () => 'null',
-                icon: Image.asset(
-                  'assets/images/logo_G.png',
-                  height: 35,
-                ),
-                label: const Text(
-                  'Continue with Google',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700),
-                ),
-                style: ElevatedButton.styleFrom(
-                    side: const BorderSide(color: Colors.grey),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+              child: Container(
+                width: 300,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: Offset(0, 1),
                     ),
-                    minimumSize: const Size(200, 50),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 12)),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/logo_g.png',
+                      height: 40,
+                      width: 40,
+                      fit: BoxFit.cover,
+                    ),
+                    TextButton(
+                      onPressed: () => 'loading',
+                      child: const Text(
+                        'Continue with Google',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black54,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

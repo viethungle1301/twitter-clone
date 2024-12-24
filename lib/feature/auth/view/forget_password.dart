@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class ForgetPassword extends StatelessWidget {
+class ForgetPassword extends StatefulWidget {
   const ForgetPassword({super.key});
 
   @override
+  State<ForgetPassword> createState() => _ForgetPasswordState();
+}
+
+class _ForgetPasswordState extends State<ForgetPassword> {
+  final TextEditingController emailController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(250, 250, 250, 255),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, size: 30),
           color: Colors.blue,
@@ -43,6 +51,7 @@ class ForgetPassword extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Enter email',
                   hintStyle:
@@ -52,7 +61,7 @@ class ForgetPassword extends StatelessWidget {
                     borderSide: BorderSide.none,
                   ),
                   filled: true,
-                  fillColor: const Color.fromARGB(255, 215, 194, 194),
+                  fillColor: const Color.fromARGB(238, 238, 238, 255),
                 ),
               ),
             ),

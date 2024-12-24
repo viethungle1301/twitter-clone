@@ -13,7 +13,7 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          'assets/images/X_logo.png',
+          'assets/images/x_logo.png',
           color: Colors.black,
           width: 30,
           height: 30,

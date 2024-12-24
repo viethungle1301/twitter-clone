@@ -2,13 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone_app/feature/auth/view/sign_in_page.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  //tạo Controller cho textfield
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    //giải phóng bộ nhớ
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(250, 250, 250, 255),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -35,52 +58,58 @@ class SignUp extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextField(
+              controller: nameController,
               decoration: InputDecoration(
                 hintText: 'Name',
-                hintStyle: const TextStyle(fontSize: 25),
+                hintStyle: const TextStyle(fontSize: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 215, 194, 194),
+                fillColor: const Color.fromARGB(238, 238, 238, 255),
               ),
             ),
             const Gap(40),
             TextField(
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: 'Enter email',
-                hintStyle: const TextStyle(fontSize: 25),
+                hintStyle: const TextStyle(fontSize: 20),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
                     borderSide: BorderSide.none),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 215, 194, 194),
+                fillColor: const Color.fromARGB(238, 238, 238, 255),
               ),
             ),
             const Gap(40),
             TextField(
+              controller: passwordController,
+              obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Enter password',
-                hintStyle: const TextStyle(fontSize: 25),
+                hintStyle: const TextStyle(fontSize: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 215, 194, 194),
+                fillColor: const Color.fromARGB(238, 238, 238, 255),
               ),
             ),
             const Gap(40),
             TextField(
+              controller: confirmController,
+              obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Confirm password',
-                hintStyle: const TextStyle(fontSize: 25),
+                hintStyle: const TextStyle(fontSize: 20),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
                     borderSide: BorderSide.none),
                 filled: true,
-                fillColor: const Color.fromARGB(255, 215, 194, 194),
+                fillColor: const Color.fromARGB(238, 238, 238, 255),
               ),
             ),
             const Gap(50),
