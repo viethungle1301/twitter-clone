@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:twitter_clone_app/feature/home/view/home_screen_page.dart';
+import 'package:twitter_clone_app/feature/home/view/search.dart';
 
 class MainScreens extends StatefulWidget {
   const MainScreens({super.key});
@@ -13,7 +14,7 @@ class _MainScreensState extends State<MainScreens> {
   int currentTab = 0;
   List screens = const [
     HomeScreenPage(),
-    Scaffold(),
+    Search(),
     Scaffold(),
     Scaffold(),
   ];
@@ -25,7 +26,7 @@ class _MainScreensState extends State<MainScreens> {
         decoration: const BoxDecoration(
           color: Colors.white,
           border: Border(
-            top: BorderSide(color: Colors.grey, width: 0.3),
+            top: BorderSide(color: Colors.grey, width: 0.5),
           ),
         ),
         child: BottomAppBar(
