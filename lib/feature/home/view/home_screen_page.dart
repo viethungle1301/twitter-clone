@@ -26,12 +26,10 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                 height: 30,
               ),
               centerTitle: true,
-              leading: Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Image.asset(
+              leading: IconButton(
+                onPressed: () {},
+                icon: Image.asset(
                   'assets/images/logo_user.png',
-                  width: 30,
-                  height: 30,
                 ),
               ),
               bottom: const TabBar(
@@ -56,6 +54,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                 itemBuilder: (context, index) => Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Padding(padding: EdgeInsets.only(left: 10)),
                     Image.asset(
                       'assets/images/logo_user.png',
                       height: 50,
@@ -177,6 +176,15 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               Container(),
               Container(),
             ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blue,
+          onPressed: () {},
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 40,
           ),
         ),
       ),

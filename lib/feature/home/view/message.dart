@@ -1,39 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone_app/models/twitter.dart';
 
-class Search extends StatefulWidget {
-  const Search({super.key});
+class Message extends StatefulWidget {
+  const Message({super.key});
 
   @override
-  State<Search> createState() => _SearchState();
+  State<Message> createState() => _MessageState();
 }
 
-class _SearchState extends State<Search> {
+class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Image.asset(
-            'assets/images/logo_user.png',
+        title: const Text(
+          'Message',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        title: TextField(
-          decoration: InputDecoration(
-            hintText: 'Search..',
-            hintStyle: const TextStyle(
-              color: Colors.black54,
-              fontSize: 20,
-            ),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide.none),
-            filled: true,
-            fillColor: const Color.fromARGB(238, 238, 238, 255),
-          ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Image.asset('assets/images/logo_user.png'),
         ),
         actions: [
           IconButton(
@@ -45,17 +37,29 @@ class _SearchState extends State<Search> {
             ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4.0),
+          child: Container(
+            color: Colors.black87,
+            height: 0.1,
+          ),
+        ),
       ),
       body: DefaultTabController(
         length: 3,
         child: TabBarView(
           children: [
             ListView.separated(
+              itemCount: twitters.length,
+              separatorBuilder: (context, index) => const Divider(
+                color: Colors.black87,
+                thickness: 0.1,
+              ),
               itemBuilder: (context, index) => Row(
                 children: [
                   const Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 40)),
+                          EdgeInsets.symmetric(horizontal: 5, vertical: 30)),
                   Image.asset(
                     'assets/images/logo_user.png',
                     width: 40,
@@ -66,24 +70,18 @@ class _SearchState extends State<Search> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              twitters[index].name,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Gap(3),
-                            SvgPicture.asset('assets/svgs/verified.svg'),
-                          ],
+                        Text(
+                          twitters[index].name,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         Text(
                           '@${twitters[index].username}',
                           style: const TextStyle(
-                            fontSize: 14,
+                            fontSize: 16,
                             color: Colors.black54,
                           ),
                         ),
@@ -92,11 +90,6 @@ class _SearchState extends State<Search> {
                   ),
                 ],
               ),
-              separatorBuilder: (context, index) => const Divider(
-                color: Colors.black45,
-                thickness: 0.1,
-              ),
-              itemCount: twitters.length,
             ),
             Container(),
             Container(),
@@ -107,7 +100,7 @@ class _SearchState extends State<Search> {
         backgroundColor: Colors.blue,
         onPressed: () {},
         child: const Icon(
-          Icons.add,
+          Icons.forward_to_inbox_outlined,
           color: Colors.white,
           size: 40,
         ),

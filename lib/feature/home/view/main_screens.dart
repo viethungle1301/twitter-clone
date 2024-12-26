@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:twitter_clone_app/feature/home/view/home_screen_page.dart';
+import 'package:twitter_clone_app/feature/home/view/message.dart';
+import 'package:twitter_clone_app/feature/home/view/notifications.dart';
 import 'package:twitter_clone_app/feature/home/view/search.dart';
 
 class MainScreens extends StatefulWidget {
@@ -15,8 +17,8 @@ class _MainScreensState extends State<MainScreens> {
   List screens = const [
     HomeScreenPage(),
     Search(),
-    Scaffold(),
-    Scaffold(),
+    Notifications(),
+    Message(),
   ];
   @override
   Widget build(BuildContext context) {
