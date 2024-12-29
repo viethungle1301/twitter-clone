@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone_app/feature/auth/view/welcome_page.dart';
+import 'package:twitter_clone_app/feature/auth/view/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const WelcomePage(),
+      home: const SplashScreen(),
     );
   }
 }
