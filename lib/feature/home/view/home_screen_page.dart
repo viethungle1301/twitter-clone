@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/models/twitter.dart';
 import 'package:numeral/ext.dart';
 
@@ -21,7 +22,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
           headerSliverBuilder: (context, innerBoxScrolled) => [
             SliverAppBar(
               title: Image.asset(
-                'assets/images/x_logo.png',
+                AssetsImages.logoX,
                 width: 30,
                 height: 30,
               ),
@@ -29,7 +30,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
               leading: IconButton(
                 onPressed: () {},
                 icon: Image.asset(
-                  'assets/images/logo_user.png',
+                  AssetsImages.logoUser,
                 ),
               ),
               bottom: const TabBar(
@@ -56,7 +57,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                   children: [
                     const Padding(padding: EdgeInsets.only(left: 10)),
                     Image.asset(
-                      'assets/images/logo_user.png',
+                      AssetsImages.logoUser,
                       height: 50,
                       width: 50,
                     ),
@@ -77,7 +78,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                                 ),
                               ),
                               const Gap(2),
-                              SvgPicture.asset('assets/svgs/verified.svg'),
+                              SvgPicture.asset(AssetsSvgs.verifiedIcon),
                               const Gap(10),
                               Text(
                                 '@${twitters[index].username} -',
@@ -108,7 +109,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SvgPicture.asset(
-                                'assets/svgs/comment.svg',
+                                AssetsSvgs.commentIcon,
                                 color: Colors.black54,
                               ),
                               const Gap(3),
@@ -120,7 +121,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                               ),
                               const Gap(15),
                               SvgPicture.asset(
-                                'assets/svgs/retweet.svg',
+                                AssetsSvgs.retweetIcon,
                                 color: Colors.black54,
                               ),
                               const Gap(3),
@@ -130,7 +131,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                               ),
                               const Gap(15),
                               SvgPicture.asset(
-                                'assets/svgs/like_outlined.svg',
+                                AssetsSvgs.likeOutlinedIcon,
                                 color: Colors.black54,
                               ),
                               Text(
@@ -139,7 +140,7 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
                               ),
                               const Gap(15),
                               SvgPicture.asset(
-                                'assets/svgs/views.svg',
+                                AssetsSvgs.viewsIcon,
                                 color: Colors.black54,
                               ),
                               Text(

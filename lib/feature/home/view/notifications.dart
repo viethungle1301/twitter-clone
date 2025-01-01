@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -30,7 +31,7 @@ class _NotificationsState extends State<Notifications> {
               leading: IconButton(
                 onPressed: () {},
                 icon: Image.asset(
-                  'assets/images/logo_user.png',
+                  AssetsImages.logoUser,
                 ),
               ),
               actions: [

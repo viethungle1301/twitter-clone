@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/models/twitter.dart';
 
 class Message extends StatefulWidget {
@@ -25,7 +26,7 @@ class _MessageState extends State<Message> {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {},
-          icon: Image.asset('assets/images/logo_user.png'),
+          icon: Image.asset(AssetsImages.logoUser),
         ),
         actions: [
           IconButton(
@@ -61,7 +62,7 @@ class _MessageState extends State<Message> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 5, vertical: 30)),
                   Image.asset(
-                    'assets/images/logo_user.png',
+                    AssetsImages.logoUser,
                     width: 40,
                     height: 40,
                   ),

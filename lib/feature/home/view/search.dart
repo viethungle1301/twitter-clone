@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/models/twitter.dart';
 
 class Search extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SearchState extends State<Search> {
         leading: IconButton(
           onPressed: () {},
           icon: Image.asset(
-            'assets/images/logo_user.png',
+            AssetsImages.logoUser,
           ),
         ),
         title: TextField(
@@ -57,7 +58,7 @@ class _SearchState extends State<Search> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 5, vertical: 40)),
                   Image.asset(
-                    'assets/images/logo_user.png',
+                    AssetsImages.logoUser,
                     width: 40,
                     height: 40,
                   ),

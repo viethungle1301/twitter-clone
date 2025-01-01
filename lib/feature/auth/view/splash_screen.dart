@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/feature/auth/view/welcome_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Image.asset(
-              'assets/images/x_logo.png',
+              AssetsImages.logoX,
               color: Colors.black,
               width: 50,
               height: 50,

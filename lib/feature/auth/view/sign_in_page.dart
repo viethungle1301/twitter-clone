@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:gap/gap.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/feature/auth/view/forget_password.dart';
 import 'package:twitter_clone_app/feature/home/view/main_screens.dart';
 
@@ -133,7 +134,7 @@ class _SignInPageState extends State<SignInPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/logo_g.png',
+                      AssetsImages.logoGoogle,
                       height: 40,
                       width: 40,
                       fit: BoxFit.cover,

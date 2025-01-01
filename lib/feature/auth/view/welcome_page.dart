@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/feature/auth/view/sign_up.dart';
 import 'package:twitter_clone_app/feature/auth/view/sign_in_page.dart';
 
@@ -13,7 +14,7 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          'assets/images/x_logo.png',
+          AssetsImages.logoX,
           color: Colors.black,
           width: 30,
           height: 30,

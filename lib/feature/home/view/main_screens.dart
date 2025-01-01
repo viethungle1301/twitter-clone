@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:twitter_clone_app/constants/assets_constants.dart';
 import 'package:twitter_clone_app/feature/home/view/home_screen_page.dart';
 import 'package:twitter_clone_app/feature/home/view/message.dart';
 import 'package:twitter_clone_app/feature/home/view/notifications.dart';
@@ -42,7 +43,7 @@ class _MainScreensState extends State<MainScreens> {
                   currentTab = 0;
                 }),
                 icon: SvgPicture.asset(
-                  'assets/svgs/home_outlined.svg',
+                  AssetsSvgs.homeOutlinedIcon,
                   width: 50,
                   height: 50,
                 ),
@@ -52,7 +53,7 @@ class _MainScreensState extends State<MainScreens> {
                   currentTab = 1;
                 }),
                 icon: SvgPicture.asset(
-                  'assets/svgs/search.svg',
+                  AssetsSvgs.searchIcon,
                   width: 50,
                   height: 50,
                 ),
@@ -62,7 +63,7 @@ class _MainScreensState extends State<MainScreens> {
                   currentTab = 2;
                 }),
                 icon: SvgPicture.asset(
-                  'assets/svgs/notif_outlined.svg',
+                  AssetsSvgs.notifOutlinedIcon,
                   width: 50,
                   height: 50,
                 ),
@@ -72,7 +73,7 @@ class _MainScreensState extends State<MainScreens> {
                   currentTab = 3;
                 }),
                 icon: SvgPicture.asset(
-                  'assets/svgs/message.svg',
+                  AssetsSvgs.messageIcon,
                   width: 50,
                   height: 50,
                 ),
