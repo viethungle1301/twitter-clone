@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone_app/feature/auth/view/welcome_page.dart';
+import 'package:twitter_clone_app/feature/auth/view/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Twitter Clone Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomePage(),
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
     );
   }
 }
-
