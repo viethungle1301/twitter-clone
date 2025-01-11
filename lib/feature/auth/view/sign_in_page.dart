@@ -112,45 +112,32 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ),
             const Gap(70),
-            Center(
-              child: Container(
-                width: 300,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.white, width: 2),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.grey,
-                      spreadRadius: 1,
-                      blurRadius: 5,
-                      offset: Offset(0, 1),
-                    ),
-                  ],
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: TextButton.icon(
+                onPressed: () {},
+                icon: Image.asset(
+                  AssetsImages.logoGoogle,
+                  width: 45,
+                  height: 45,
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      AssetsImages.logoGoogle,
-                      height: 40,
-                      width: 40,
-                      fit: BoxFit.cover,
-                    ),
-                    TextButton(
-                      onPressed: () => 'loading',
-                      child: const Text(
-                        'Continue with Google',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  elevation: 6,
+                  shadowColor: Colors.white,
+                ),
+                label: const Text(
+                  'Continue with Google',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black54,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
